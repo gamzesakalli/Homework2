@@ -1,0 +1,19 @@
+import javax.swing.*;
+public class string {
+	public static void main(String[] args)
+	{
+		String name, first, middle, last, space, monogram;
+		space=" ";//burası hangi karaktere göre ayıracağımızı kullandığımız bölüm.Biz her boşluktan sonraki harfi almak istediğimiz için boşluk kullandık.
+		name=JOptionPane.showInputDialog(null,"Enter your full name(first, middle, last):");
+		first=name.substring(0, name.indexOf(space));//0. indis ve boşluk indisini kullanarak ayırma yapıp firste atıyoruz
+		name=name.substring(name.indexOf(space)+1, name.length());//ilk kelimeyi ayırıp 2. kelime ve sonrasına bakmak için name'i yeniden uyarlıyoruz
+		System.out.println(name);
+		middle=name.substring(0,name.indexOf(space));//0. indisten boşluğa kadar alıp middle'a atıyoruz
+		last=name.substring(name.indexOf(space)+1, name.length());//boşluktan sonra başlayan son kelimeyi alıp lasta atıyoruz. Böylelikle kelimeleri boşluğa göre ayırmış bulunuyoruz
+		monogram=first.substring(0,1)+middle.substring(0,1)+ last.substring(0,1);//her kelimenin ilk harfini alıp monograma kaydettik
+		JOptionPane.showMessageDialog(null,"Your monogram is "+monogram);//monogramda birleştirdiğimiz ilk harfleri bu şekilde göstermiş olduk
+		
+		
+	}
+
+}
